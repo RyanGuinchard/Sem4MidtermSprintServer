@@ -1,4 +1,4 @@
-package cities;
+package sprint.cities;
 
 public class Cities {
     private int id;
