@@ -1,6 +1,6 @@
 package sprint.airports;
 
-public class Airports {
+public class Airport {
     private int id;
     private String name;
     private String code;
