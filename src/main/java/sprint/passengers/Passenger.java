@@ -1,6 +1,6 @@
 package sprint.passengers;
 
-public class Passengers {
+public class Passenger {
     private int id;
     private String firstName;
     private String lastName;
