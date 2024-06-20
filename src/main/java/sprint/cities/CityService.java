@@ -16,7 +16,7 @@ public class CityService {
     }
 
     // Using optional to prevent null pointer exception
-    public City getCityById(long id) {
+    public City getCityById(int id) {
         Optional<City> match = cities.stream()
             .filter(c -> c.getId() == id)
             .findFirst();
@@ -38,6 +38,7 @@ public class CityService {
             city.setName(updatedCity.getName());
             city.setState(updatedCity.getState());
             city.setPopulation(updatedCity.getPopulation());
+            city.setAirports(updatedCity.getAirports());
             return city;
         }
         return null;
