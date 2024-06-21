@@ -1,4 +1,5 @@
 package sprint.cities;
+
 import java.util.List;
 import sprint.airports.Airport;
 
@@ -9,7 +10,6 @@ public class City {
     private int population;
     private List<Airport> airports;
 
-    // Constructors
     public City() {}
 
     public City(int id, String name, String state, int population) {
@@ -18,6 +18,8 @@ public class City {
         this.state = state;
         this.population = population;
     }
+
+    // Getters and Setters
 
     public int getId() {
         return id;
