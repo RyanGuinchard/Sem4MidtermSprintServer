@@ -1,4 +1,5 @@
 package sprint.aircraft;
+
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,8 @@ public class AircraftService {
             aircraft.setType(updatedAircraft.getType());
             aircraft.setAirlineName(updatedAircraft.getAirlineName());
             aircraft.setNumberOfPassengers(updatedAircraft.getNumberOfPassengers());
+            aircraft.setPassengers(updatedAircraft.getPassengers());
+            aircraft.setAirports(updatedAircraft.getAirports());
             return aircraft;
         }
         return null;

@@ -1,4 +1,5 @@
 package sprint.passengers;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -20,13 +21,13 @@ public class PassengerController {
     }
 
     @PostMapping
-    public Passenger createPassenger(@RequestBody Passenger airport) {
-        return passengerService.createPassenger(airport);
+    public Passenger createPassenger(@RequestBody Passenger passenger) {
+        return passengerService.createPassenger(passenger);
     }
 
     @PutMapping("/{id}")
-    public Passenger updatePassenger(@PathVariable int id, @RequestBody Passenger airport) {
-        return passengerService.updatePassenger(id, airport);
+    public Passenger updatePassenger(@PathVariable int id, @RequestBody Passenger passenger) {
+        return passengerService.updatePassenger(id, passenger);
     }
 
     @DeleteMapping("/{id}")
