@@ -6,9 +6,7 @@ public class Passenger {
     private String lastName;
     private String phoneNumber;
 
-    public Passenger() {
-
-    }
+    public Passenger() {}
 
     public Passenger(int id, String firstName, String lastName, String phoneNumber) {
         this.id = id;

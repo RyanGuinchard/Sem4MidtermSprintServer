@@ -35,6 +35,7 @@ public class AirportService {
             airport.setId(updatedAirport.getId());
             airport.setName(updatedAirport.getName());
             airport.setCode(updatedAirport.getCode());
+            airport.setCity(updatedAirport.getCity());
             return airport;
         }
         return null;

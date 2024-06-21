@@ -10,8 +10,7 @@ public class City {
     private List<Airport> airports;
 
     // Constructors
-    public City() {
-    }
+    public City() {}
 
     public City(int id, String name, String state, int population) {
         this.id = id;

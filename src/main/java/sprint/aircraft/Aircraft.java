@@ -6,6 +6,15 @@ public class Aircraft {
     private String airlineName;
     private int numberOfPassengers;
 
+    public Aircraft() {}
+
+    public Aircraft(int id, String type, String airlineName, int numberOfPassengers) {
+        this.id = id;
+        this.type = type;
+        this.airlineName = airlineName;
+        this.numberOfPassengers = numberOfPassengers;
+    }
+
     public int getId() {
         return id;
     }
