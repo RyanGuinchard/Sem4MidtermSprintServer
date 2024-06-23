@@ -2,6 +2,8 @@ package sprint.cities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sprint.airports.Airport;
+
 import java.util.List;
 
 @RestController
@@ -21,6 +23,11 @@ public class CityController {
     @GetMapping("/{id}")
     public City getCityById(@PathVariable int id) {
         return cityService.getCityById(id);
+    }
+
+    @GetMapping("/airports/{cityId}")
+    public List<Airport> getAirportsByCityId(@PathVariable int cityId) {
+        return cityService.getAirportsByCityId(cityId);
     }
 
     // Post request
