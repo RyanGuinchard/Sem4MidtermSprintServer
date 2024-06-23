@@ -1,4 +1,5 @@
 package sprint.airports;
+
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +33,10 @@ public class AirportService {
                 .findFirst();
         if (match.isPresent()) {
             Airport airport = match.get();
-            airport.setId(updatedAirport.getId());
             airport.setName(updatedAirport.getName());
             airport.setCode(updatedAirport.getCode());
+            airport.setCity(updatedAirport.getCity());
+            airport.setAircrafts(updatedAirport.getAircrafts());
             return airport;
         }
         return null;

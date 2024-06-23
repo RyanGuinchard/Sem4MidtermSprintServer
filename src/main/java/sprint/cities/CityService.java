@@ -17,11 +17,10 @@ public class CityService {
         return new ArrayList<>(cities);
     }
 
-    // Using optional to prevent null pointer exception
-    public City getCityById(long id) {
+    public City getCityById(int id) {
         Optional<City> match = cities.stream()
-            .filter(c -> c.getId() == id)
-            .findFirst();
+                .filter(c -> c.getId() == id)
+                .findFirst();
         return match.orElse(null);
     }
 
@@ -33,13 +32,14 @@ public class CityService {
 
     public City updateCity(int id, City updatedCity) {
         Optional<City> match = cities.stream()
-            .filter(c -> c.getId() == id)
-            .findFirst();
+                .filter(c -> c.getId() == id)
+                .findFirst();
         if (match.isPresent()) {
             City city = match.get();
             city.setName(updatedCity.getName());
             city.setState(updatedCity.getState());
             city.setPopulation(updatedCity.getPopulation());
+            city.setAirports(updatedCity.getAirports());
             return city;
         }
         return null;
