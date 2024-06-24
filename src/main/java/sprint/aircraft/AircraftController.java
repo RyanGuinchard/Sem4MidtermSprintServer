@@ -2,6 +2,7 @@ package sprint.aircraft;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sprint.airports.Airport;
 import java.util.List;
 
 @RestController
@@ -19,6 +20,11 @@ public class AircraftController {
     @GetMapping("/{id}")
     public Aircraft getAircraftById(@PathVariable int id) {
         return aircraftService.getAircraftById(id);
+    }
+
+    @GetMapping("/{aircraftId}/airports")
+    public List<Airport> getAirportsByAircraftId(@PathVariable int aircraftId) {
+        return aircraftService.getAirportsByAircraftId(aircraftId);
     }
 
     @PostMapping

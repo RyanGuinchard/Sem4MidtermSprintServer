@@ -1,6 +1,7 @@
 package sprint.airports;
 
 import org.springframework.stereotype.Service;
+import sprint.passengers.Passenger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -45,4 +46,21 @@ public class AirportService {
     public void deleteAirport(int id) {
         airports.removeIf(a -> a.getId() == id);
     }
+
+    public List<Airport> getAirportsUsedByPassengerId(int passengerId) {
+        List<Airport> usedAirports = new ArrayList<>();
+        for (Airport airport : airports) {
+            for (Aircraft aircraft : airport.getAircrafts()) {
+                for (Passenger passenger : aircraft.getPassengers()) {
+                    if (passenger.getId() == passengerId) {
+                        usedAirports.add(airport);
+                        break;
+                    }
+                }
+            }
+        }
+        return usedAirports;
+    }
+
 }
+
