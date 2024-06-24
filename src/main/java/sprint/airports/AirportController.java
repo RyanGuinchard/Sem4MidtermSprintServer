@@ -20,6 +20,11 @@ public class AirportController {
         return airportService.getAirportById(id);
     }
 
+    @GetMapping("/passenger/{passengerId}")
+    public List<Airport> getAirportsUsedByPassengerId(@PathVariable int passengerId) {
+        return airportService.getAirportsUsedByPassengerId(passengerId);
+    }
+
     @PostMapping
     public Airport createAirport(@RequestBody Airport airport) {
         return airportService.createAirport(airport);

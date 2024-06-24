@@ -1,6 +1,7 @@
 package sprint.aircraft;
 
 import org.springframework.stereotype.Service;
+import sprint.airports.Airport;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -46,5 +47,10 @@ public class AircraftService {
 
     public void deleteAircraft(int id) {
         aircrafts.removeIf(a -> a.getId() == id);
+    }
+
+    public List<Airport> getAirportsByAircraftId(int aircraftId) {
+        Aircraft aircraft = getAircraftById(aircraftId);
+        return aircraft != null ? aircraft.getAirports() : null;
     }
 }

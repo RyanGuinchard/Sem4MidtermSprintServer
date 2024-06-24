@@ -1,6 +1,7 @@
 package sprint.passengers;
 
 import org.springframework.stereotype.Service;
+import sprint.aircraft.Aircraft;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -45,5 +46,9 @@ public class PassengerService {
 
     public void deletePassenger(int id) {
         passengers.removeIf(p -> p.getId() == id);
+    }
+    public List<Aircraft> getAircraftsByPassengerId(int passengerId) {
+        Passenger passenger = getPassengerById(passengerId);
+        return passenger != null ? passenger.getAircrafts() : null;
     }
 }
