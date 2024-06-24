@@ -54,4 +54,31 @@ public class CityService {
         return city != null ? city.getAirports() : null;
     }
 
+    public void assignAirportToCity(int cityId, Airport airport) {
+        // Retrieve the city by cityId
+        Optional<City> optionalCity = cities.stream()
+                .filter(city -> city.getId() == cityId)
+                .findFirst();
+
+        if (optionalCity.isPresent()) {
+            City city = optionalCity.get();
+
+            // Ensure currentAirports is initialized
+            if (city.getAirports() == null) {
+                city.setAirports(new ArrayList<>());
+            }
+
+            // Retrieve the list of airports assigned to the city
+            List<Airport> currentAirports = city.getAirports();
+
+            // Add the new airport to the list
+            currentAirports.add(airport);
+
+            // Update the city with the new list of airports
+            city.setAirports(currentAirports);
+        } else {
+            throw new IllegalArgumentException("City not found with id: " + cityId);
+        }
+    }
+
 }

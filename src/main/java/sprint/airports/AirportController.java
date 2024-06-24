@@ -16,12 +16,12 @@ public class AirportController {
     }
 
     @GetMapping("/{id}")
-    public Airport getAirportById(@PathVariable int id) {
+    public Airport getAirportById(@PathVariable("id") int id) {
         return airportService.getAirportById(id);
     }
 
     @GetMapping("/passenger/{passengerId}")
-    public List<Airport> getAirportsUsedByPassengerId(@PathVariable int passengerId) {
+    public List<Airport> getAirportsUsedByPassengerId(@PathVariable("passengerId") int passengerId) {
         return airportService.getAirportsUsedByPassengerId(passengerId);
     }
 
@@ -31,12 +31,12 @@ public class AirportController {
     }
 
     @PutMapping("/{id}")
-    public Airport updateAirport(@PathVariable int id, @RequestBody Airport airport) {
+    public Airport updateAirport(@PathVariable("id") int id, @RequestBody Airport airport) {
         return airportService.updateAirport(id, airport);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteAirport(@PathVariable int id) {
+    public void deleteAirport(@PathVariable("id") int id) {
         airportService.deleteAirport(id);
     }
 }

@@ -1,5 +1,6 @@
 package sprint.cities;
 
+import java.util.ArrayList;
 import java.util.List;
 import sprint.airports.Airport;
 
@@ -18,6 +19,7 @@ public class City {
         this.name = name;
         this.state = state;
         this.population = population;
+        this.airports = new ArrayList<>();
     }
 
     // Getters and Setters
