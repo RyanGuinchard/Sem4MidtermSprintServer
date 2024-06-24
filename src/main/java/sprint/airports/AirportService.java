@@ -1,6 +1,7 @@
 package sprint.airports;
 
 import org.springframework.stereotype.Service;
+import sprint.aircraft.Aircraft;
 import sprint.passengers.Passenger;
 import java.util.ArrayList;
 import java.util.List;
