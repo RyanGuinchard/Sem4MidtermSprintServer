@@ -3,6 +3,7 @@ package sprint.cities;
 import java.util.List;
 import sprint.airports.Airport;
 
+
 public class City {
     private int id;
     private String name;

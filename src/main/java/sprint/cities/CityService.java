@@ -1,7 +1,7 @@
 package sprint.cities;
 
 import org.springframework.stereotype.Service;
-
+import sprint.airports.Airport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,4 +48,10 @@ public class CityService {
     public void deleteCity(int id) {
         cities.removeIf(c -> c.getId() == id);
     }
+
+    public List<Airport> getAirportsByCityId(int cityId) {
+        City city = getCityById(cityId);
+        return city != null ? city.getAirports() : null;
+    }
+
 }
