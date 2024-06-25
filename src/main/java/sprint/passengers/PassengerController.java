@@ -17,12 +17,12 @@ public class PassengerController {
     }
 
     @GetMapping("/{id}")
-    public Passenger getPassengerById(@PathVariable int id) {
+    public Passenger getPassengerById(@PathVariable("id") int id) {
         return passengerService.getPassengerById(id);
     }
 
     @GetMapping("/{passengerId}/aircrafts")
-    public List<Aircraft> getAircraftsByPassengerId(@PathVariable int passengerId) {
+    public List<Aircraft> getAircraftsByPassengerId(@PathVariable("passengerId") int passengerId) {
         return passengerService.getAircraftsByPassengerId(passengerId);
     }
     @PostMapping
@@ -31,12 +31,12 @@ public class PassengerController {
     }
 
     @PutMapping("/{id}")
-    public Passenger updatePassenger(@PathVariable int id, @RequestBody Passenger passenger) {
+    public Passenger updatePassenger(@PathVariable("id") int id, @RequestBody Passenger passenger) {
         return passengerService.updatePassenger(id, passenger);
     }
 
     @DeleteMapping("/{id}")
-    public void deletePassenger(@PathVariable int id) {
+    public void deletePassenger(@PathVariable("id") int id) {
         passengerService.deletePassenger(id);
     }
 }

@@ -18,12 +18,12 @@ public class AircraftController {
     }
 
     @GetMapping("/{id}")
-    public Aircraft getAircraftById(@PathVariable int id) {
+    public Aircraft getAircraftById(@PathVariable("id") int id) {
         return aircraftService.getAircraftById(id);
     }
 
     @GetMapping("/{aircraftId}/airports")
-    public List<Airport> getAirportsByAircraftId(@PathVariable int aircraftId) {
+    public List<Airport> getAirportsByAircraftId(@PathVariable("aircraftId") int aircraftId) {
         return aircraftService.getAirportsByAircraftId(aircraftId);
     }
 
@@ -33,12 +33,12 @@ public class AircraftController {
     }
 
     @PutMapping("/{id}")
-    public Aircraft updateAircraft(@PathVariable int id, @RequestBody Aircraft aircraft) {
+    public Aircraft updateAircraft(@PathVariable("id") int id, @RequestBody Aircraft aircraft) {
         return aircraftService.updateAircraft(id, aircraft);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteAircraft(@PathVariable int id) {
+    public void deleteAircraft(@PathVariable("id") int id) {
         aircraftService.deleteAircraft(id);
     }
 }
