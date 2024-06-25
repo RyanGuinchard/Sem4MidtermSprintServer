@@ -1,29 +1,35 @@
 package sprint.passengers;
 
+import com.fasterxml.jackson.annotation.*;
 import sprint.aircraft.Aircraft;
 import sprint.cities.City;
 import sprint.airports.Airport;
 
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Passenger {
     private int id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
+
     private City city;
+
     private List<Aircraft> aircrafts;
+
     private List<Airport> airports;
 
     public Passenger() {}
 
-    public Passenger(int id, String firstName, String lastName, String phoneNumber, City city, List<Aircraft> aircrafts) {
+    public Passenger(int id, String firstName, String lastName, String phoneNumber, City city, List<Aircraft> aircrafts, List<Airport> airports) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.city = city;
         this.aircrafts = aircrafts;
+        this.airports = airports;
     }
 
     // Getters and Setters
@@ -72,12 +78,12 @@ public class Passenger {
         return aircrafts;
     }
 
-    public List<Airport> getAirports() {
-        return airports;
-    }
-
     public void setAircrafts(List<Aircraft> aircrafts) {
         this.aircrafts = aircrafts;
+    }
+
+    public List<Airport> getAirports() {
+        return airports;
     }
 
     public void setAirports(List<Airport> airports) {
