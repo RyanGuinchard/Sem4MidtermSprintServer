@@ -2,15 +2,21 @@ package sprint.cities;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import sprint.airports.Airport;
+import sprint.passengers.Passenger;
 
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class City {
     private int id;
     private String name;
     private String state;
     private int population;
+
     private List<Airport> airports;
+
+    private List<Passenger> passengers;
 
     public City() {}
 
@@ -62,5 +68,13 @@ public class City {
 
     public void setAirports(List<Airport> airports) {
         this.airports = airports;
+    }
+
+    public List<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(List<Passenger> passengers) {
+        this.passengers = passengers;
     }
 }

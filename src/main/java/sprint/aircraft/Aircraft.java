@@ -1,15 +1,20 @@
 package sprint.aircraft;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.*;
 import sprint.airports.Airport;
 import sprint.passengers.Passenger;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aircraft {
     private int id;
     private String type;
     private String airlineName;
     private int numberOfPassengers;
+
     private List<Passenger> passengers;
+
     private List<Airport> airports;
 
     public Aircraft() {}
