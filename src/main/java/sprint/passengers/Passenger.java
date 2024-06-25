@@ -2,6 +2,7 @@ package sprint.passengers;
 
 import sprint.aircraft.Aircraft;
 import sprint.cities.City;
+import sprint.airports.Airport;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Passenger {
     private String phoneNumber;
     private City city;
     private List<Aircraft> aircrafts;
+    private List<Airport> airports;
 
     public Passenger() {}
 
@@ -70,7 +72,15 @@ public class Passenger {
         return aircrafts;
     }
 
+    public List<Airport> getAirports() {
+        return airports;
+    }
+
     public void setAircrafts(List<Aircraft> aircrafts) {
         this.aircrafts = aircrafts;
+    }
+
+    public void setAirports(List<Airport> airports) {
+        this.airports = airports;
     }
 }
